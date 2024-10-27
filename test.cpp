@@ -25,5 +25,8 @@ int main()
     for (int i = 0; i < k; ++i) {
         assert(AC.visited(i) == results[i]);
     }
+    // get_link addition test
+    AhoCorasick link_AC;
+    assert(link_AC.get_link(0) == 0);
     return 0;
 }
