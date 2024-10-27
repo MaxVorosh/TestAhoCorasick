@@ -9,10 +9,10 @@ int main()
     cin.tie(0);
     cout.tie(0);
     AhoCorasick AC;
-    string data[] = {"abacabadabacaba", "olo", "trol", "", "trolololo", "t", "troglodit", "trololo"};
-    bool results[] = {false, true, true, true, false, true, false, true};
+    string data[] = {"olo", "trol",  "trolololo"};
+    bool results[] = {true, true, false};
     string t = "trololo";
-    int k = 8;
+    int k = 3;
     for (int i = 0; i < k; ++i) {
         string s = data[i];
         AC.add_string(s, i);

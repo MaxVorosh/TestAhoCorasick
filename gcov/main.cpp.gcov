@@ -9,19 +9,19 @@
         -:    5:
         -:    6:const int Inf = 2e9;
         -:    7:
-function _ZN6VertexC2Ev called 35 returned 100% blocks executed 100%
-       35:    8:Vertex::Vertex() {
-       35:    9:    fill(next, next + 26, -1);
+function _ZN6VertexC2Ev called 14 returned 100% blocks executed 100%
+       14:    8:Vertex::Vertex() {
+       14:    9:    fill(next, next + 26, -1);
 call    0 returned 100%
-       35:   10:    fill(go, go + 26, -1);
+       14:   10:    fill(go, go + 26, -1);
 call    0 returned 100%
-       35:   11:    leaf = false;
-       35:   12:    p = -1;
-       35:   13:    pch = -1;
-       35:   14:    link = -1;
-       35:   15:    suff_go = false;
-       35:   16:    ind = -1;
-       35:   17:}
+       14:   11:    leaf = false;
+       14:   12:    p = -1;
+       14:   13:    pch = -1;
+       14:   14:    link = -1;
+       14:   15:    suff_go = false;
+       14:   16:    ind = -1;
+       14:   17:}
         -:   18:
         -:   19:
 function _ZN11AhoCorasickC2Ev called 2 returned 100% blocks executed 100%
@@ -33,42 +33,42 @@ call    0 returned 100%
 call    1 returned 100%
         2:   22:}
         -:   23:
-function _ZN11AhoCorasick10add_stringERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 8 returned 100% blocks executed 100%
-        8:   24:void AhoCorasick::add_string(string& s, int ind) {
-        8:   25:    int v = 0;
-       56:   26:    for (int i = 0; i < s.size(); ++i) {
+function _ZN11AhoCorasick10add_stringERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 3 returned 100% blocks executed 100%
+        3:   24:void AhoCorasick::add_string(string& s, int ind) {
+        3:   25:    int v = 0;
+       19:   26:    for (int i = 0; i < s.size(); ++i) {
 call    0 returned 100%
-branch  1 taken 86%
-branch  2 taken 14% (fallthrough)
-       48:   27:        if (bor[v].next[s[i] - 'a'] == -1) {
-call    0 returned 100%
-call    1 returned 100%
-branch  2 taken 69% (fallthrough)
-branch  3 taken 31%
-       33:   28:            bor.push_back(Vertex());
+branch  1 taken 84%
+branch  2 taken 16% (fallthrough)
+       16:   27:        if (bor[v].next[s[i] - 'a'] == -1) {
 call    0 returned 100%
 call    1 returned 100%
-       33:   29:            bor.back().p = v;
-call    0 returned 100%
-       33:   30:            bor.back().pch = s[i];
+branch  2 taken 75% (fallthrough)
+branch  3 taken 25%
+       12:   28:            bor.push_back(Vertex());
 call    0 returned 100%
 call    1 returned 100%
-       33:   31:            bor[v].next[s[i] - 'a'] = bor.size() - 1;
+       12:   29:            bor.back().p = v;
+call    0 returned 100%
+       12:   30:            bor.back().pch = s[i];
+call    0 returned 100%
+call    1 returned 100%
+       12:   31:            bor[v].next[s[i] - 'a'] = bor.size() - 1;
 call    0 returned 100%
 call    1 returned 100%
 call    2 returned 100%
         -:   32:        }
-       48:   33:        v = bor[v].next[s[i] - 'a'];
+       16:   33:        v = bor[v].next[s[i] - 'a'];
 call    0 returned 100%
 call    1 returned 100%
         -:   34:    }
-        8:   35:    bor[v].leaf = true;
+        3:   35:    bor[v].leaf = true;
 call    0 returned 100%
-        8:   36:    bor[v].ind = ind;
+        3:   36:    bor[v].ind = ind;
 call    0 returned 100%
-        8:   37:    dict.push_back(false);
+        3:   37:    dict.push_back(false);
 call    0 returned 100%
-        8:   38:}
+        3:   38:}
         -:   39:
 function _ZN11AhoCorasick8get_linkEi called 20 returned 100% blocks executed 100%
        20:   40:int AhoCorasick::get_link(int v) {
@@ -143,9 +143,9 @@ branch  2 taken 65%
 call    0 returned 100%
        11:   72:    if (bor[v].leaf) {
 call    0 returned 100%
-branch  1 taken 45% (fallthrough)
-branch  2 taken 55%
-        5:   73:        dict[bor[v].ind] = true;
+branch  1 taken 18% (fallthrough)
+branch  2 taken 82%
+        2:   73:        dict[bor[v].ind] = true;
 call    0 returned 100%
 call    1 returned 100%
 call    2 returned 100%
@@ -159,9 +159,9 @@ call    1 returned 100%
         -:   77:    }
         -:   78:}
         -:   79:
-function _ZN11AhoCorasick7visitedEi called 8 returned 100% blocks executed 100%
-        8:   80:bool AhoCorasick::visited(int i) {
-        8:   81:    return dict[i];
+function _ZN11AhoCorasick7visitedEi called 3 returned 100% blocks executed 100%
+        3:   80:bool AhoCorasick::visited(int i) {
+        3:   81:    return dict[i];
 call    0 returned 100%
 call    1 returned 100%
         -:   82:}
